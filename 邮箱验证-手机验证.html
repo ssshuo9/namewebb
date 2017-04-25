@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//手机号码验证
+			var a = prompt('请输入手机号验证');
+			var reg = /^1\d{10}$/;
+			console.log(reg.test(a))
+		    if(reg.test(a)){ 
+       		 	alert("手机号码有误，请重填");  
+    		} 
+    		
+    		//邮箱验证
+			var email = prompt ('输入邮箱');
+			var reg = /^\w{3,}@(qq.|126.|163.|sina.)(com|cn)/;
+			console.log(reg.test(email))
+			if (reg.test(email)) {
+				alert('邮箱验证成功');
+			}else {
+				alert('请输入正确的邮箱地址')
+			}
+		</script>
+	</body>
+</html>
