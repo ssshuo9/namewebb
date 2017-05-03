@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	用户名：<input class="one" type="text" name="">
+		</br></br>
+	邮   箱：<input class="two" type="text" name="">
+		</br>
+		<input type="button" name="" value="提交">
+	<script type="text/javascript" src='jquery-3.2.1.js'></script>
+	<script type="text/javascript">
+		$('input[type="button"]').click(function  () {
+			var reg1 = 	/^[a-z0-9_-]{3,16}$/;
+			var reg2 = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+			if (reg1.test($('.one').val())) {
+				if (reg2.test($('.two').val())) {
+					alert('登陆成功')
+				}else {
+					alert('邮箱不正确')
+				}
+			}else {
+				alert('用户名不正确')
+			}
+		})
+	</script>
+</body>
+</html>
