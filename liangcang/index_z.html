@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="icon" href="img/icon.ico" type="image/x-icon">
+    </head>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <body>
+    	<!-- 头部 -->
+    	<header>
+			<div class="header_top">
+				<div class="center">
+				<!-- logo:left -->
+					<div class="logo">
+						<a href="#"></a>
+					</div>
+					<!-- logo:right -->
+					<ul class="stat" id="stat">
+						<li class="zhuce width" id="yh">
+							<img src="img/header_d_head.png" id="header_head">
+							<span id="yhh"></span>
+							<div id="xia">
+								<a href="#"><span class="zhuangtai">个人设置</span></a>
+								<a href="#"><span class="zhuangtai">账号安全</span></a>
+								<a href="#"><span class="zhuangtai">收货信息</span></a>
+								<a href="#"><span class="zhuangtai">我的订单</span></a>
+								<a href="#" style="border-bottom: none;height: 50px;" id="tuichu"><span class="zhuangtai" style="height: 50px;border-bottom: none;text-align: center;">退出</span></a>
+							</div>
+						</li>
+						<li class="line"></li>
+						<li class="tong width" id="gouwucar">
+							<a href="#">购物车</a>
+							<!-- 购物车下拉列表开始 -->
+							<div class="car">
+								<div class="car-top">
+									<a href="#">你的购物车暂时没有商品...</a>
+								</div>
+								<div class="car-bom">
+									<a href="#">快去抢购良仓商品吧！</a>
+								</div>
+							</div>
+							<!-- 购物车下拉列表结束 -->
+						</li>
+						<li class="line"></li>
+						<li class="tong width" id="message">
+							<!-- 消息下拉列表 -->
+							<a href="#">消息</a>
+							<div class="message">
+								<a href="#"><span>动态<small>0</small></span></a>
+								<a href="#"><span>评论<small>0</small></span></a>
+								<a href="#"><span>私信<small>0</small></span></a>
+								<a href="#"><span>粉丝<small>0</small></span></a>
+								<a href="#"><span>喜欢<small>0</small></span></a>
+								<a href="#"><span>通知<small>0</small></span></a>
+							</div>
+						</li>
+						<li class="line"></li>
+						<li class="tong width"><a href="#">添加良品</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="header_middle">
+				<ul class="nav">
+					<li id="homepage" class="nav-one "><a href="#" class="hove">首页</a></li>
+					<li class="nav-one">
+						<a href="#" class="hove">商店</a>
+						<!-- 商店的下拉列表 -->
+						<div class="shop_down">
+							<div class="shop_down-l">
+								<ul class="shoplist">
+									<li class="cat_name">
+										<img src="img/23687.png">
+										<span>家居(API)</span>
+									</li>
+								</ul>
+							</div>
+							<div class="shop_down-r">
+								<img src="">
+							</div>
+						</div>
+					</li>
+					<li class="nav-one" id="second">
+						<a href="#" class="hove">杂志</a>
+						<div class="notes" id="notes">
+							<a class="note" href="#">1</a>
+							<a class="note" href="#">2</a>
+							<a class="note" href="#">3</a>
+							<a class="note" href="#">4</a>
+							<a class="note" href="#">5</a>
+							<a class="note" href="#">6</a>
+							<a class="note" href="#">7</a>
+							<a class="note" href="#">8</a>
+							<a class="note" href="#">9</a>
+							<a class="note" href="#">10</a>
+							<a class="note" href="#">11</a>
+						</div>
+					</li>
+					<li class="nav-one" id="shares">
+						<a href="#" class="hove">分享</a>
+						<div class="notes" id="share">
+							<a class="note" href="#">12</a>
+							<a class="note" href="#">23</a>
+							<a class="note" href="#">34</a>
+							<a class="note" href="#">45</a>
+							<a class="note" href="#">56</a>
+							<a class="note" href="#">67</a>
+							<a class="note" href="#">78</a>
+							<a class="note" href="#">89</a>
+							<a class="note" href="#">99</a>
+							<a class="note" href="#">10</a>
+							<a class="note" href="#">11</a>
+						</div>
+					</li>
+					<li class="nav-one"><a href="#" class="hove">达人</a></li>
+				</ul>
+				<div class="search">
+					<div id="search_a">
+						<input type="text" name="" placeholder="search...">
+						<s></s>
+					</div>
+					<button id="search"></button>
+
+				</div>
+			</div>
+    	</header>
+    	<section style="position: relative;">
+	    	<div id="banner">
+	    		<ul id="banner_a">
+	    			<li>
+	    				<img src="img/1.jpg">
+	    			</li>
+	    			<li>
+	    				<img src="img/2.jpg">
+	    			</li>
+	    			<li>
+	    				<img src="img/3.jpg">
+	    			</li>
+	    			<li>
+	    				<img src="img/4.jpg">
+	    			</li>
+	    			<li>
+	    				<img src="img/5.jpg">
+	    			</li>
+	    			<li>
+	    				<img src="img/1.jpg">
+	    			</li>
+	    		</ul>
+	    	</div>
+	    		<ul id="xiabiao">
+	    			<li class="one"></li>
+	    			<li></li>
+	    			<li></li>
+	    			<li></li>
+	    			<li></li>
+	    			<li style="display: none">6</li>
+	    		</ul>
+	    		<div class="btn-l"><</div>
+	    		<div class="btn-r">></div>
+	    </section>
+	    <div class="lunbo_xia">
+	    	<div class="lunbo_xia_l">
+	    		<div class="l_t"><a href="#"><img src="img/27174.jpg"></a></div>
+	    		<div class="l_b"><a href="#"><img src="img/27175.jpg"></a></div>
+	    	</div>
+	    	<div class="lunbo_xia_m"><a href="#"><img src="img/27178.jpg"></a></div>
+	    	<div class="lunbo_xia_r">
+	    		<div class="l_t"><a href="#"><img src="img/27176.jpg"></a></div>
+	    		<div class="l_b"><a href="#"><img src="img/27177.jpg"></a></div>
+	    	</div>
+	    </div>
+    </body>
+    <script type="text/javascript">
+    //二级导航第二个
+    	$("#second").hover(function(){
+    		$("#notes").stop(true).slideDown(100);
+    	},function(){
+    		$("#notes").stop(true).slideUp(300);
+    	})
+    //二级导航第三个
+    	$("#shares").hover(function(){
+    		$("#share").stop(true).slideDown(100);
+    	},function(){
+    		$("#share").stop(true).slideUp(300);
+    	})
+
+    //轮播图↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+ //    	var i = 0;
+ //    	var time;
+ //    	time = setInterval(start,3000)
+ //    		function start(){
+ //    		//自动轮播
+	//     		i++;
+	// 			$("#xiabiao li").eq(i).addClass('one').siblings().removeClass('one')
+	//     		$("#banner_a").animate({marginLeft:i * -1000 +"px"},300,function(){
+	//     			if (i == 5) {
+	//     				i = 0
+	//     				$("#xiabiao li").eq(0).addClass('one')
+	//     				$(this).css({marginLeft: '0'});
+	//     			}
+	//     		})
+
+	// 			//下标点击
+	// 			$("#xiabiao li").each(function(index){
+	// 				$(this).click(function(){
+	// 					$("#banner_a").css({marginLeft:index * -1000 +"px"});
+	// 					$(this).addClass('one').siblings().removeClass('one')
+	// 					i = index;
+	// 				})
+	// 			});
+ //    		}
+
+	// // //左右按钮
+	// 		$(".btn-l").click(function(){
+	// 			clearInterval(time)
+	// 			if (i <= 0) {
+	// 				i = 4;
+	// 				$("#banner_a").css({marginLeft:i * -1000 +"px"})
+	//     			$("#xiabiao li").eq(4).addClass('one')
+	// 			} else {
+	// 				i-=1;
+	// 				$("#banner_a").css({marginLeft:i * -1000 +"px"})
+	// 				$("#xiabiao li").eq(i).addClass('one').siblings().removeClass('one')
+	// 			}
+ //    			time = setInterval(start,3000)
+	// 		})
+
+	// 		//右按钮
+	// 		$(".btn-r").click(function(){
+	// 			clearInterval(time)
+	// 			if (i >= 4 ) {
+	// 				i = 0;
+	//     			$("#xiabiao li").eq(0).addClass('one')
+	// 				$("#banner_a").css({marginLeft:i * -1000 +"px"})
+	// 			} else {
+	// 				i+=1;
+	// 				$("#banner_a").css({marginLeft:i * -1000 +"px"})
+	// 				$("#xiabiao li").eq(i).addClass('one').siblings().removeClass('one')
+	// 			}
+ //    			time = setInterval(start,3000)
+	// 		})
+
+	//轮播图完↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+    //鼠标滚动事件--黑色消失，白色显示
+    	// $(window).scroll(function(){
+    	// 	if ($(window).scrollTop() >= 100) {
+    	// 		alert(1)
+    	// 	} else {}
+    	// })
+    //获取地址栏中的地址，把用户名分析出来
+	    var substr = document.URL;
+		function GetQueryString(name)
+		{
+		     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+		     var r = window.location.search.substr(1).match(reg);
+		     if(r!=null)return  unescape(r[2]); return null;
+		}
+	    var userna = GetQueryString("username")
+	    $("#yhh").html(userna)
+	    if (GetQueryString("avater")) {
+	    	$("#header_head").css("src","http://www.iliangcang.com/images/default/"+GetQueryString("avater"))
+	    } 
+    //search栏移动动画效果
+    	var flag = true;
+    	$("#search").click(function (){
+    		if (flag) {
+    			$("#search_a").stop().animate({right:'0px'}, 500,function(){
+    			flag = false;
+    			})
+    		} else {
+    			$("#search_a").stop().animate({right:'-250px'}, 500,function(){
+    			flag = true;
+    			})
+    		}
+    	})
+    //
+    	$("#tuichu").click(function() {
+    		window.location.href="index.html"
+    	});
+    </script>
+</html>

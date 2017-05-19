@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/zhuce.css">
+        <script type="text/javascript" src="js/jquery.js"></script>
+    </head>
+    <body>
+    	<div class="enroll">
+    		<div class="logo">
+    			<a href="index.html">
+    				<img src="img/logo_icon.png">
+    			</a>
+    		</div>
+    		<form>
+    			<p class="shuru">
+    				<span>用户名</span><input id="username" type="text" name="user_name" placeholder="3-20位字母、数字、下滑线">
+                    <small id="yhm"></small>
+    			</p>
+
+    			<p class="shuru">
+    				<span>验证码</span>
+    				<input type="text" name="user_name" placeholder="输入验证码（暂时没用）" class="yanz" >
+    				<img src="img/www.iliangcang.gif">
+    				<a href="#">看不清楚，换一张</a>
+    			</p>
+
+    			<p class="shuru">
+    				<span>创建密码</span>
+    				<input type="password" name="user_name" placeholder="6－20位字符组成，区分大小写" class="bu">
+    				<span class="qiangdu">
+    					<i class="tu"></i>
+    					<span class="ruo">弱</span>
+    					<span class="ruo zhong" id="zhong">中</span>
+    					<span class="ruo">强</span>
+    				</span>
+    			</p>
+
+    			<p class="shuru">
+    				<span>密码确认</span><input type="password" name="user_name" placeholder="确认密码" id="checkpass">
+                    <small id="queren"></small>
+    			</p>
+    			<div class="agree">
+    				<input id="agerr" type="checkbox" name="" checked="checked">
+    				<label for="agerr" style="color: #fff;">同意</label>
+    				<a href="#"> 良仓注册条款</a>
+    			</div>
+    			<input type="button" name="" class="submit" value="立即注册">
+    			<div class="youlian">
+    				<em></em>
+    				<a href="#" class="lianjie icon_qq" title="QQ"></a>
+    				<a href="#" class="lianjie icon_xina" title="新浪微博" ></a>
+    				<a href="#" class="lianjie icon_douban" title="豆瓣"></a>
+    				<a href="#" class="lianjie icon_tengx" title="腾讯微博"></a>
+					<i></i>
+    				<a href="denglu.html" class="sub">登录良仓</a>
+    			</div>
+    		</form>
+    		<a href="#" class="aside">
+    			<div class="bgName">SELETTI</div>
+    			<img src="img/6.jpg">
+    		</a>
+    	</div>
+        <script type="text/javascript">
+        //判断两次密码是否一样，
+        $("#checkpass").change(function(){
+            var pass = $(".bu").val();
+            var checkpass = $("#checkpass").val();
+            if (pass != checkpass) {
+                $("#queren").text("两次密码不一致")
+            }else {
+                $("#queren").text("")
+
+            }
+        })
+        //判断密码强度 没完成
+
+            
+
+
+
+        //框选同意协议，方可继续，↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+            //点击勾选框
+            $("input[type = 'checkbox']").click(function(){
+                //获取勾选框状态
+                var check = $("input[type = 'checkbox']").prop("checked");
+                var btn = $(".submit");//获取按钮
+                //查看勾选框状态
+                if (check) {
+                    //取消disabled
+                    btn.attr('disabled',false);
+                } else {
+                    //执行disabled
+                    btn.attr('disabled',true)
+                }
+            })
+
+
+
+
+
+        //点击注册，发送数据给后端
+            $(".submit").click(function (){
+                $.post({
+                    url: 'http://lc.shudong.wang/api_user.php',
+                    dataType: 'json',
+                    data: {status:'register',username:$("#username").val(),password:$("#checkpass").val()},
+                    success:function(data){
+                        if (data.code === 0) {
+                            alert("恭喜你，注册成功！跳转到首页");
+                            window.location.href="index_z.html?username="+$("#username").val();
+                        } else if (data.code === 2001){
+                            $("#yhm").text("用户名已存在")
+                        } else if (data.code === 2000) {
+                            alert("注册过期，请刷新网页")
+                        } else if (data.code === 1000) {
+                            alert("用户名格式错误")
+                        } else if (data.code === 1001) {
+                            alert("密码格式不正确")
+                        } else {
+                            alert("服务器繁忙，请稍后再试")
+                        }
+                    }
+                })
+                
+            })
+        </script>
+    </body>
+</html>

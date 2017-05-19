@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="icon" href="img/icon.ico" type="image/x-icon">
+    </head>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <body>
+    	<!-- 头部 -->
+    	<header>
+			<div class="header_top">
+				<div class="center">
+				<!-- logo:left -->
+					<div class="logo">
+						<a href="#"></a>
+					</div>
+					<!-- logo:right -->
+					<ul class="stat" id="stat">
+						<li class="zhuce width">
+							<a href="denglu.html">登录</a>
+							<a href="zhuce.html">注册</a>
+						</li>
+						<li class="line"></li>
+						<li class="tong width" id="gouwucar">
+							<a href="#">购物车</a>
+							<!-- 购物车下拉列表开始 -->
+							<div class="car">
+								<div class="car-top">
+									<a href="#">你的购物车暂时没有商品...</a>
+								</div>
+								<div class="car-bom">
+									<a href="#">快去抢购良仓商品吧！</a>
+								</div>
+							</div>
+							<!-- 购物车下拉列表结束 -->
+						</li>
+						<li class="line"></li>
+						<li class="tong width" id="message">
+							<!-- 消息下拉列表 -->
+							<a href="#">消息</a>
+							<div class="message">
+								<a href="#"><span>动态<small>0</small></span></a>
+								<a href="#"><span>评论<small>0</small></span></a>
+								<a href="#"><span>私信<small>0</small></span></a>
+								<a href="#"><span>粉丝<small>0</small></span></a>
+								<a href="#"><span>喜欢<small>0</small></span></a>
+								<a href="#"><span>通知<small>0</small></span></a>
+							</div>
+						</li>
+						<li class="line"></li>
+						<li class="tong width"><a href="#">添加良品</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="header_middle">
+				<ul>
+					<li id="homepage"><a href="#">首页</a></li>
+					<li><a href="#">商店</a></li>
+					<li><a href="#">杂志</a></li>
+					<li><a href="#">分享</a></li>
+					<li><a href="#">达人</a></li>
+				</ul>
+				<div class="search">
+					<div id="search_a">
+						<input type="text" name="" placeholder="search...">
+						<s></s>
+					</div>
+					<button id="search"></button>
+
+				</div>
+			</div>
+    	</header>
+    </body>
+    <script type="text/javascript">
+    //search栏移动动画效果
+    	var flag = true;
+    	$("#search").click(function (){
+    		if (flag) {
+    			$("#search_a").stop().animate({right:'0px'}, 500,function(){
+    			flag = false;
+    			})
+    		} else {
+    			$("#search_a").stop().animate({right:'-250px'}, 500,function(){
+    			flag = true;
+    			})
+    		}
+    	})
+    //
+    </script>
+</html>
