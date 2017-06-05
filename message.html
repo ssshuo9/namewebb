@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+        	* {
+				margin: 0;padding: 0;list-style: none;
+        	}
+        	h2 span{
+        		margin: 0 auto;display: block;width: 200px;text-align: center;
+        	}
+        	ul {
+        		width: 700px;border: 2px solid #789864;margin: 20px auto 0;border-radius: 5px;background: #789898;height: 370px;overflow: auto;
+        	}
+        	li {
+        		width: 650px;height: 100px;border: 1px solid #325236;margin: 15px auto 15px;background: #abb999;border-radius: 3px;
+        	}
+        	div {
+        		width: 600px;height: 70px;background: #fff;margin: 5px auto 0;
+        	}
+        	li p span{
+        		width: 40px;display: inline-block;float: right;font-size: 14px;color: red;cursor: pointer;margin-right: 10px;text-align: center;
+        	}
+			textarea {
+				width: 680px;height: 120px;margin: 0 auto;display: block;margin-top: 20px;font-size: 18px;padding: 10px;
+			}
+			#button {
+				width: 200px;margin: 10px auto
+			}
+			.edit {
+				width: 100px;
+			}
+        </style>
+    </head>
+    <body>
+    	<h2>留 言 板</h2>
+    	<ul id="ul">
+    		<!-- <li>
+    			<div id="content" contenteditable="true">
+    			</div>
+    			<p>
+    				<span id="remove">删除</span>
+    				<span id="edit">编辑</span>
+    			</p>
+    		</li> -->
+    	</ul>
+		<textarea id="editContent"></textarea>
+		<p id="button">
+			<input type="button" name="" value="发布留言" id="publish">
+			<input type="button" name="" value="取消留言" id="cancel">
+		</p>
+		<script type="text/javascript">
+			
+
+			var publish = document.getElementById("publish")
+			var cancel = document.getElementById("cancel")
+
+			var editContent = document.getElementById("editContent")
+			var content = document.getElementById("content")
+
+			var ul = document.getElementById("ul")
+
+			var i = 0;
+			//创建数据库:五个参数说明：1.数据库名称2.版本号3.描述文本4.数据库大小5.创建回调
+			var db = openDatabase('Message', '1.0', 'content', 2 * 1024 * 1024);
+
+			cancel.onclick = function() {
+				editContent.value = ""
+			}
+			//发布留言，传入数据库存储
+			publish.onclick = function (){
+				if (editContent.value) {
+					//插入数据
+					db.transaction(function (tx) {
+					   tx.executeSql('CREATE TABLE IF NOT EXISTS LOGS (id unique, log)');
+					   tx.executeSql('INSERT INTO LOGS (id, log) VALUES (?, ?)',[len++, editContent.value]);
+					});
+				}else {
+					alert("请输入留言内容")
+				}
+			}
+
+			//读取数据库留言内容
+			db.transaction(function (tx) {
+			   tx.executeSql('SELECT * FROM LOGS', [], function (tx, results) {
+			      len = results.rows.length, i;
+			      for (i = 0; i < len; i++){
+		      	      	var dom = "<div class='content' contenteditable='true'>" +			 results.rows.item(i).log +
+					    			"</div>" +
+					    			"<p>" +
+					    				"<span class='removee'>删除</span>" +
+					    			"</p>"
+					    li = document.createElement("li")
+					    li.innerHTML = dom;
+			         ul.appendChild(li)
+			      }
+
+				//删除留言
+			    var edit = document.getElementsByTagName("span")
+					for (var j = 0; j < edit.length; j++) {
+						edit[j].index = j;
+						edit[j].onclick = function () {
+							db.transaction(function(tx) {
+							    tx.executeSql('DELETE FROM LOGS WHERE id=?', [results.rows.item(this.index).id]);
+							});
+						}
+					}
+			   }, null);
+			});
+			
+		</script>
+    </body>
+</html>
