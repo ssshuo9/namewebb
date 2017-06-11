@@ -1,0 +1,368 @@
+    <!-- 1 CSS3的新特性 -->
+    	a.边框--border-radius. bax-shadow. border-image
+    	b.背景--background-origin
+    			(padding-box：从padding区域（含padding）开始显示背景图像。border-box：从border区域（含border）开始显示背景图像。content-box：从content区域开始显示背景图像。)
+    	c.文本效果--word-break
+    			(normal：依照亚洲语言和非亚洲语言的文本规则，允许在字内换行。keep-all：与所有非亚洲语言的normal相同。对于中文，韩文，日文，不允许字断开。适合包含少量亚洲文本的非亚洲文本。break-all：该行为与亚洲语言的normal相同。也允许非亚洲语言文本行的任意字内断开。该值适合包含一些非亚洲文本的亚洲文本，比如使连续的英文字母间断行。)
+    			word-wrap(normal:允许内容顶开或溢出指定的容器边界。break-word：内容在边界内换行。)
+    	d.字体--font-stretch(
+    			ultra-condensed：比正常文字宽度窄4个基数。
+				extra-condensed：比正常文字宽度窄3个基数。
+				condensed：比正常文字宽度窄2个基数。
+				semi-condensed：比正常文字宽度窄1个基数。
+				normal：正常文字宽度
+				semi-expanded：比正常文字宽度宽1个基数。
+				expanded：比正常文字宽度宽2个基数。
+				extra-expanded：比正常文字宽度宽3个基数。
+				ultra-expanded：比正常文字宽度宽4个基数。)
+		e.2D--tranform(
+				translate(X，Y):指定对象的2D平移。
+						translateX():指定对象X轴的平移。
+						translateY():指定对象Y轴的平移。
+				rotate(角度（deg）):指定对象的2D旋转，需先有tranform-origin属性。
+						tranform-origin:
+								该属性提供2个参数值。
+								如果提供两个，第一个用于横坐标，第二个用于纵坐标。
+								如果只提供一个，该值将用于横坐标；纵坐标将默认为50%。
+								对应的脚本特性为transformOrigin。
+				scale(X,Y):指定对象的2D缩放。
+				skew(X,Y):指定对象的斜切扭曲，X、Y都为角度。
+		)
+		f.3D--tranform(
+				tranform:向元素应用2D或3D。
+				tranform-origin:允许你转换元素的位置。
+				tranform-style:规定被嵌套的元素如何在3D空间中显示。
+						flat	表示所有子元素在2D平面呈现。
+						preserve-3d	表示所有子元素在3D空间中呈现。
+				perspective:规定3D的透视效果。
+				perspective-origin:规定3D元素的底部位置。
+				backface-visibility:定义元素在不面对屏幕时是否可见。
+
+				translate3d(x,y,z):定义3D转化。
+				scale3d(x,y,z):定义3D缩放。
+				rotate(x,y,z):定义3D旋转。
+				perspective(n):定义3D转换元素的透视视图。
+		)
+		g.多渡--transition(参与过渡的属性，持续时间，动画类型，延迟时间)(
+				[transition-property ]：
+				检索或设置对象中的参与过渡的属性
+				[ transition-duration ]：
+				检索或设置对象过渡的持续时间
+				[ transition-timing-function ]：
+				检索或设置对象中过渡的动画类型
+				[ transition-delay ]：
+				检索或设置对象延迟过渡的时间)
+		h.动画--animation()(
+				[ animation-name ]：
+				检索或设置对象所应用的动画名称
+						@-webkit-weyframes 动画名称{
+								form{}
+								to{}
+								或
+								0%{}
+								50%{}
+								100%{}
+						}
+				[ animation-duration ]：
+				检索或设置对象动画的持续时间
+				[ animation-timing-function ]：
+				检索或设置对象动画的过渡类型
+						linear：
+						线性过渡。等同于贝塞尔曲线(0.0, 0.0, 1.0, 1.0)
+						ease：
+						平滑过渡(非匀速)。等同于贝塞尔曲线(0.25, 0.1, 0.25, 1.0)
+						ease-in：
+						由慢到快。等同于贝塞尔曲线(0.42, 0, 1.0, 1.0)
+						ease-out：
+						由快到慢。等同于贝塞尔曲线(0, 0, 0.58, 1.0)
+						ease-in-out：
+						由慢到快再到慢。等同于贝塞尔曲线(0.42, 0, 0.58, 1.0)
+						cubic-bezier(n, n, n, n)：
+						特定的贝塞尔曲线类型，4个数值需在[0, 1]区间内
+				[ animation-delay ]：
+				检索或设置对象动画延迟的时间
+				[ animation-iteration-count ]：
+				检索或设置对象动画的循环次数
+						infinite：无限循环
+						n：指定对象动画的具体循环次数
+				[ animation-direction ]：
+				检索或设置对象动画在循环中是否反向运动
+						normal：正常方向
+						alternate：正常与反向交替
+				[ animation-play-state ]：
+				检索或设置对象动画的状态。
+						running：运动
+						paused：暂停
+
+
+				animation-fill-mode:检索或设置对象动画时间之外的状态。
+						none：默认值。不设置对象动画之外的状态
+						forwards：设置对象状态为动画结束时的状态
+						backwards：设置对象状态为动画开始时的状态
+						both：设置对象状态为动画结束或开始的状态)
+		i.多列--columns(
+				column-width:列的宽度
+				column-count:列数
+				column-gap:列之间的间隙
+				column-rule:列之间的边框
+				column-span:对象元素是否横跨所有列
+				column-fill:列的高度是否统一
+				column-break-before:对象之前是否断行
+				column-break-after:对象之后是否断行
+				column-break-inside:对象内部是否断行)
+	<!-- 2  在CSS中可以被继承和不能被继承的属性-->
+			无继承性的属性：
+					1.display:规定元素应该生成的框的类型。
+					2.文本属性：
+							vertical-align:垂直文本对齐。
+							text-decoration:规定添加到文本的装饰。
+							text-shadow:文本阴影效果。
+							white-space:空白符的处理。
+					3.盒模型的属性：
+							width/height/margin/padding/border
+					4.背景属性：
+							background
+					5.定位属性：
+							float/clear/position/overflow/z-index
+					6.内容属性：content
+					7.轮廓样式属性：outline/outline-style/outline-width/outline-color
+					8.页面样式属性：size
+					9.声音样式属性：pause-before/pause-after/pause/cue-before/cue-after/cue/paly-during
+			有继承性的属性：
+					1.字体系列
+							font/font-family/font-weight/font-size/font-size/font-style/font-variant
+					2.文本系列
+							text-indent/text-align/line-height/word-spacing/letter-spacing/text-transform/direction/color
+					3.元素可见性visibility
+					4.列表属性list-style-type/list-sytle-image/list-style-position/list-style
+					5.光标属性 cursor
+			所有元素可继承的属性
+					1.元素可见性：visibility
+					2.光标属性：cursor
+	<!-- 3 ajax具体操作流程 -->
+			1.创建XMLHttpRequest对象
+				if(window.XMLHttpRequest){
+					var xhr = new XMLHttpRequest()
+				}else{
+					var xhr = new ActiveXObject("Microslft.XMLHTTP")
+			2.每当readyState 改变时，就会触发onreadystatechange事件
+				xhr.onreadystatechange = function (){
+					if(xhr.readyState === 4 && xhr.status === 200) {
+						xhr.readyState:
+							0: 请求未初始化
+							1: 服务器连接已建立
+							2: 请求已接收
+							3: 请求处理中
+							4: 请求已完成，且响应已就绪
+						xhr.status:
+							200: "OK"
+							404: 未找到页面
+
+						响应（返回的数据）：
+							xhr.responseText/xhr.responseXML
+					}
+				}
+			3.post时加header头,get时不要
+				xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+			4.发送请求
+				GET:xhr.send(null) xhr.open("GET","地址",async(true/false))
+				POST:xhr.send(发送给后端的数据)
+					xhr.open("POST","地址",async(true/false))
+	<!-- 4 清除浮动的几种方式及各自的优缺点 -->
+		1、父级div定义伪类:after和zoom
+		原理：IE8以上和非IE浏览器才支持:after，原理和方法2有点类似，zoom(IE转有属性)可解决ie6,ie7浮动问题。
+		优点：浏览器支持好，不容易出现怪问题（目前：大型网站都有使用，如：腾迅，网易，新浪等等）。
+		缺点：代码多，不少初学者不理解原理，要两句代码结合使用，才能让主流浏览器都支持。
+		建议：推荐使用，建议定义公共类，以减少CSS代码。
+
+		2、父级div定义overflow:hidden
+		原理：必须定义width或zoom:1，同时不能定义height，使用overflow:hidden	overflow:hidden时，浏览器会自动检查浮动区域的高度。
+		优点：简单，代码少，浏览器支持好。
+		缺点：不能和position配合使用，因为超出的尺寸的会被隐藏。
+		建议：只推荐没有使用position或对overflow:hidden理解比较深的朋友使用	。
+
+		3、结尾处加空div标签clear:both
+		原理：添加一个空div，利用css提高的clear:both清除浮动，让父级div能自	动获取到高度。
+		优点：简单，代码少，浏览器支持好，不容易出现怪问题。
+		缺点：不少初学者不理解原理；如果页面浮动布局多，就要增加很多空div，让人感觉很不爽。
+		建议：不推荐使用，但此方法是以前主要使用的一种清除浮动方法。
+
+		4、父级div定义height
+		原理：父级div手动定义height，就解决了父级div无法自动获取到高度的问题。
+		优点：简单，代码少，容易掌握。
+		缺点：只适合高度固定的布局，要给出精确的高度，如果高度和父级div不一	样时，会产生问题。
+		建议：不推荐使用，只建议高度固定的布局时使用。
+
+		5、父级div定义overflow:auto
+		原理：必须定义width或zoom:1，同时不能定义height，使用overflow:auto时，浏览器会自动检查浮动区域的高度。
+		优点：简单，代码少，浏览器支持好。
+		缺点：内部宽高超过父级div时，会出现滚动条。
+		建议：不推荐使用，如果你需要出现滚动条或者确保你的代码不会出现滚动条就使用吧。
+
+		6、父级div定义display:table
+		原理：将div属性变成表格。
+		缺点：会产生新的未知问题。
+		建议：不推荐使用，只作了解。
+
+		7、父级div也一起浮动
+		原理：所有代码一起浮动，就变成了一个整体。
+		缺点：会产生新的浮动问题。
+		建议：不推荐使用，只作了解。
+
+		8、结尾处加br标签clear:both
+		原理：父级div定义zoom:1来解决IE浮动问题，结尾处加br标签clear:both。
+		建议：不推荐使用，只作了解。
+	<!-- 5 H5 新的JS API -->
+		- 多媒体：video、audio、
+		- 游戏：canvas、webgl、
+		- 存储：localstorage、sessonstorage、websql、indexedDB
+		- 网络：websocket
+		- 地理定位
+
+
+		- 拖拽
+		- 新选择器
+	<!-- 6 CSS3新增的伪类  -->
+		E:not()					匹配不含有s选择符的元素E。
+		E:root					匹配E元素在文档的根元素。
+		E:last-child			匹配父元素的最后一个子元素E。
+		E:only-child			匹配父元素仅有的一个子元素E。
+		E:nth-child(n)			匹配父元素的第n个子元素E。
+		E:nth-last-child(n)		匹配父元素的倒数第n个子元素E。
+		E:first-of-type			匹配同类型中的第一个同级兄弟元素E。
+		E:last-of-type			匹配同类型中的最后一个同级兄弟元素E。
+		E:only-of-type			匹配同类型中的唯一的一个同级兄弟元素E。
+		E:nth-of-type(n)		匹配同类型中的第n个同级兄弟元素E。
+		E:nth-last-of-type(n)	匹配同类型中的倒数第n个同级兄弟元素E。
+		E:empty					匹配没有任何子元素（包括text节点）的元素E。
+		E:checked				匹配用户界面上处于选中状态的元素E。(用于input:type为radio与checkbox时)
+		E:enabled				匹配用户界面上处于可用状态的元素E。
+		E:disabled				匹配用户界面上处于禁用状态的元素E。
+		E:target				匹配相关URL指向的E元素。
+	<!-- 7 CSS3新特性 -->
+		/选择器/RGBA和透明度/多栏布局/多背景图/Word Wrap/文字阴影/@font-face属性/圆角(边框半径)/边框图片/盒阴影/盒子大小/媒体查询/语音
+	<!-- 8 title和alt属性的区别 -->
+		title作为属性时，用来为元素提供额外说明信息。
+		alt属性则是用来指定替换文字，只能用在img、area和input元素中，用于网页中图片无法正常显示时给用户提供文字说明使其了解图像信息。注意，alt是替代图像作用而不是提供额外说明文字的。还具有搜索引擎优化效果。
+		当a标签内嵌套img标签时，起作用的是img的title属性。
+	<!-- 9 css reset的作用和用途 -->
+		重置浏览器的css默认属性。
+	<!-- 10 Document.write innerHTML的区别 -->
+		document.write会将页面上的所有内容清除包括标题，
+		innerHTML只会重写所属元素的内容
+	<!-- 11 split() join()的区别 -->
+		前者是字符串切割成数组的形式，后者是将数组转换成字符串
+	<!-- 12 事件绑定和普通事件有什么区别 -->
+		事件绑定就是针对dom元素的事件，绑定在dom元素上。普通事件即为非针对dom元素的事件;
+		事件绑定对同一dom可以绑定多个事件。普通事件对同一dom设置多个事件会覆盖。
+	<!-- 13 如何阻止事件冒泡和默认事件 -->
+		阻止事件冒泡：
+			标准DOM情况下--event.stopPropagetion()
+			IE8 -- window.event.cancelBubble = true
+
+		阻止默认事件：
+			event.preventDefault()
+	<!-- 14 解释jsonp原理 -->
+		ajax请求受同源策略影响，不允许进行跨域请求，而script标签src属性中的链接却可以访问跨域的js脚本，利用这个特性，服务端不再返回JSON格式的数据，而是返回一段调用某个函数的js代码，在src中进行了调用，这样实现了跨域。
+	<!-- 15 document load 和document ready的却别 -->
+		- load是当页面所有资源全部加载完成后（包括DOM文档树，css文件，js文件，图片资源等），执行一个函数
+			问题：如果图片资源较多，加载时间较长，onload后等待执行的函数需要等待较长时间，所以一些效果可能受到影响
+		- $(document).ready()是当DOM文档树加载完成后执行一个函数 （不包含图片，css等）所以会比load较快执行
+			在原生的jS中不包括ready()这个方法，只有load方法就是onload事件
+	<!-- 16 写一个URL的正则表达式 -->
+		var reg = /^((ht|f)tps?):\/\/([\w\-]+(\.[\w\-]+)*\/)*[\w\-]+(\.[\w\-]+)*\/?(\?([\w\-\.,@?^=%&:\/~\+#]*)+)?/;
+	<!-- 17 写出下面分别弹出的值 -->
+		+function() {
+			alert(a) // function a(){}
+        	var a = 5;
+        	function a() {};
+        	alert(a); // 5 函数提前。但是a=5又覆盖了。
+        	function b() {};
+        	b = 6;	
+        	alert(b); // 6	b为全局变量
+        	var c = d = b;
+   		 }()
+    	alert(d); // 6 d 为全局变量
+    	alert(c); // 报错 c is not defined; c是局部变量，在全局里找不到。
+    <!-- 18 写出i的弹出值，并用三种办法正确输出li的数字	 -->
+    	<ul>
+       		<li>1</li>
+       		<li>2</li>
+       		<li>3</li>
+       		<li>4</li>
+       		<li>5</li>
+       		<li>6</li>
+   		</ul>
+   		<script>
+		    var list_li = document.getElementsByTagName("li");
+		    for (var i = 0; i < list_li.length; i++) {
+		        list_li[i].onclick = function() {
+		            console.log(i); //不论点击哪个都是弹出值都是6
+		        }
+		    }
+		</script>
+
+		正确的方法：
+			1.保存下标值：
+				var list_li = document.getElementsByTagName("li");
+		    	for (var i = 0; i < list_li.length; i++) {
+		    	    list_li[i].index = i;
+		    	    list_li[i].onclick = function() {
+		    	        console.log(this.index + 1);
+		    	    }
+		    	}
+		    2.闭包：
+		    	var list_li = document.getElementsByTagName("li");
+			    for (var i = 0; i < list_li.length; i++) {
+			        (function(i) {
+			            list_li[i].onclick = function() {
+			                console.log(i + 1);
+			            }
+			        })(i)
+			    }
+			3.returan函数（闭包）：
+				var list_li = document.getElementsByTagName("li");
+   				for (var i = 0; i < list_li.length; i++) {
+   				    list_li[i].onclick = (function(i) {
+   				        return function() {
+   				            console.log(i + 1);
+   				        }
+   				    })(i)
+   				}
+   			4.let--ES6新语法，let关键字 浏览器支持程度不同：
+   				var list_li = document.getElementsByTagName("li");
+    			for (var i = 0; i < list_li.length; i++) {
+    			    let j = i;
+    			    list_li[i].onclick = function() {
+    			        console.log(j + 1);
+    			    }
+    			}
+    <!-- 19 用一句话算出0-100之间学生的学生等级，如90-100输出为1等生、80-90为二等生以此类推。不允许使用if switch等-->
+    	Math.floor(fenshu/10)
+    <!-- 20  写出如下输出的值，并写出把注释掉的代码取消注释的值，并解释为什么-->
+    	this.a = 20;
+    	var test = {
+    	    a: 40,
+    	    init: function() {
+    	        function go() {
+    	            // this.a = 60;
+    	            console.log(this.a);
+    	        }
+    	        go.prototype.a = 50;
+    	        return go;
+    	    }
+    	}
+    	var p = test.init();
+    	p();
+    	new(test.init())();
+
+    	没去掉注释之前：
+    		20 50
+    		var p = test.init(); 此时，p = go函数
+    		p();	go函数里的this指向window，this.a其实就是window.a = 20或者var a = 20;
+    		new(test.init())(); 使用new调用go函数，go里面的this指向go函数，因为go.a没有此属性，通过原型链查到go.prototype.a = 50。
+    	去掉注释之后：
+			60 60 
+			var p = test.init(); 
+    		p();  go函数里的this指向window，同上。
+    		new(test.init())(); 使用new调用go函数，go里面的this指向go函数，因为go.a有此属性，输出60，不在通过原型链查到。
