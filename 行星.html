@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="konva.js"></script>
+    </head>
+    <body>
+    	<div id="container"></div>
+    </body>
+    <script>
+    // 第一步：创建舞台
+    var stage = new Konva.Stage({
+        container: 'container',
+        width: window.innerWidth,
+        height: window.innerHeight
+    })
+
+    // 第二步：创建一个层
+    var layer = new Konva.Layer();
+
+    // 第三部:把这个层添加到舞台上
+    stage.add(layer);
+
+
+  
+    // 第四部：画三个圆形
+    var circle = new Konva.Circle({
+      x: 680,
+      y: 300,
+      radius: 70,
+      fill: '#747ea3'
+    });
+    var circle1 = new Konva.Circle({
+    	x: 680,
+    	y: 300,
+    	radius: 40,
+    	fill: '#747ea3',
+    	offset: {
+    	      x: 180,
+    	      y: 0
+    	}
+    });
+    var circle2 = new Konva.Circle({
+      x: 700,
+      y: 300,
+      radius: 20,
+      fill: '#747ea3',
+      offset: {
+    	      x: 300,
+    	      y: 50
+    	}
+    });
+    // 第五步：把矩形添加到层上去
+    layer.add(circle);
+    layer.add(circle1);
+    layer.add(circle2);
+
+      var simpleText = new Konva.Text({
+      x: 500,
+      y: 280,
+      text: 'WEB全站',
+      fontSize: 30,
+      fontFamily: 'Calibri',
+      fill: 'white'
+    });
+     simpleText.setOffset({
+     	 x: simpleText.getWidth() / 2
+     })
+     layer.add(simpleText)
+    stage.add(layer);
+    // 第六步：把层渲染到舞台上
+    var angularSpeed = 90;
+    var anim = new Konva.Animation(function() {
+        // var angleDiff = frame.timeDiff * angularSpeed / 1000;
+        simpleText.rotate(2);
+        circle1.rotate(2);
+        circle2.rotate(2);
+    }, layer);
+    anim.start();
+
+    // stage.draw();
+
+
+</script>
+</html>
